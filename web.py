@@ -28,7 +28,8 @@ def guessing_game():
                 st.write(
                     f'The number is {st.session_state.number} , LOOSER🫵'
                 )
-            st.write('The winners list is given below👇')
+                st.write('The winners list is given below👇')
+            st.write(f'chance used - {st.session_state.chance}')
             if guess > st.session_state.number:
                 st.write('think lower number than this😏')
             elif guess < st.session_state.number:
@@ -91,7 +92,7 @@ elif st.session_state.page == 'game pass':
         st.write('Try to keep up. 😏')
     st.link_button(
         "📸 Instagram",
-        "https://www.instagram.com/_sidharthh._/"
+        "https://www.instagram.com/_sidharthh__._/"
     )
 elif st.session_state.page == 'Win page':
     winner()
@@ -103,5 +104,5 @@ elif st.session_state.page == 'thanks':
     st.subheader('contact me for more👇(click)')
     st.link_button(
         "📸 Instagram",
-        "https://www.instagram.com/_sidharthh._/"
+        "https://www.instagram.com/_sidharthh__._/"
     )
