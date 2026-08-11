@@ -16,9 +16,7 @@ def guessing_game():
         st.session_state.limit = 3
     with st.form(key='sample form'):
         st.write('ONLY 3 CHANCES')
-        st.write(
-            f'Remaining chances: {st.session_state.limit - st.session_state.chance}'
-        )
+        
         guess = st.number_input(
             'Enter the guessed number: ',
             min_value=1,
