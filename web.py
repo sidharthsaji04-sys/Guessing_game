@@ -16,6 +16,9 @@ def guessing_game():
         st.session_state.limit = 3
     with st.form(key='sample form'):
         st.write('ONLY 3 CHANCES')
+        st.write(
+            f'Remaining chances: {st.session_state.limit - st.session_state.chance}'
+        )
         guess = st.number_input(
             'Enter the guessed number: ',
             min_value=1,
@@ -23,6 +26,7 @@ def guessing_game():
         submit_button = st.form_submit_button(label='Enter')
         if submit_button:
             st.session_state.chance += 1
+            remaining_chances = st.session_state.limit - st.session_state.chance
             if st.session_state.chance >= st.session_state.limit:
                 st.warning('limit over')
                 st.write(
@@ -30,6 +34,7 @@ def guessing_game():
                 )
                 st.write('The winners list is given below👇')
             st.write(f'chance used - {st.session_state.chance}')
+            st.write(f'Remaining chances: {remaining_chances}')
             if guess > st.session_state.number:
                 st.write('think lower number than this😏')
             elif guess < st.session_state.number:
